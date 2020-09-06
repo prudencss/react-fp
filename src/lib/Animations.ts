@@ -1,5 +1,5 @@
 export const css = {
   transition: {
-    triggerClass: 'in',
+    trigger: 'in',
   },
 }
