@@ -29,7 +29,11 @@ export enum EDecoration {
   sunken = 'u-shadow--sunken',
 }
 
-export const disabled = 'u-pointer--disabled';
+export enum EDisabled {
+  Disabled = 'u-ui--disabled u-ux--disabled',
+  Events = 'u-ux--disabled',
+  Pointer = 'u-ui--disabled',
+}
 
 export enum ESize {
   Tiny = 'tiny',
@@ -39,4 +43,20 @@ export enum ESize {
   Huge = 'huge',
 }
 
-export const componentSize = (componentType: string) => (componentSize: ESize) => `c-${componentType}-${componentSize}`;
+export const componentSize = (componentType: string) =>
+  (componentSize: ESize) => `c-${componentType}-${componentSize}`;
+
+export type TBehavior =
+  | EAnimation
+  | EColor
+  | EDecoration
+  | EDisabled
+  | ESize;
+
+export interface IBehaviorProps {
+  animation?: EAnimation;
+  color?: EColor;
+  decoration?: EDecoration;
+  size?: ESize;
+  disabled?: EDisabled;
+}
