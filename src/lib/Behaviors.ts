@@ -20,13 +20,13 @@ export enum EColor {
   Dark = "neutral-dark",
 }
 
-export const componentColor = (componentType: string) => (componentColor: EColor) => `c-${componentType}-${componentColor}`;
+export const componentColor = (componentType: string) => (componentColor: EColor) => `c-${componentType}--${componentColor}`;
 
 export enum EDecoration {
   Discrete = 'u-shadow--discrete',
   Elevated = 'u-shadow--elevated',
   ElevatedBottom = 'u-shadow--elevated-bottom',
-  sunken = 'u-shadow--sunken',
+  Sunken = 'u-shadow--sunken',
 }
 
 export enum EDisabled {
@@ -44,7 +44,7 @@ export enum ESize {
 }
 
 export const componentSize = (componentType: string) =>
-  (componentSize: ESize) => `c-${componentType}-${componentSize}`;
+  (componentSize: ESize) => `c-${componentType}--${componentSize}`;
 
 export type TBehavior =
   | EAnimation

@@ -1,10 +1,13 @@
-import React, { FC } from 'react';
+import React, {
+  FC,
+  PropsWithChildren,
+} from 'react';
 import classNames from 'classnames';
 
 import { IBehaviorProps } from '../../lib/Behaviors';
 import useBehavior from '../../lib/useBehavior';
 
-export enum EButtonType = {
+export enum EButtonType {
   Basic = 'c-btn-basic',
   NoBorder = 'c-btn--no-border',
   Stroked = 'c-btn--stroked',
@@ -12,7 +15,7 @@ export enum EButtonType = {
   Ghost = 'c-btn--ghost',
 };
 
-export interface IProps extend IBehaviorProps {
+export interface IProps extends IBehaviorProps {
   /**
    * Define _button behaviour_
    * *default:* 'button'
@@ -60,23 +63,21 @@ export interface IProps extend IBehaviorProps {
   onBlur?: (ev: React.SyntheticEvent<HTMLButtonElement>) => void;
 }
 
-const Button = <Props extends IBehaviorProps>(props) => {
-    const { onClick, onBlur, moduleSpecificClassList, type, buttonType, fab } = this.props;
-    const classList = classNames(
-      'c-btn',
-      buttonType,
-      { 'c-btn--fab': fab ?? false },
-      useBehavior(props),
-      moduleSpecificClassList,
-    );
-    const optionalDisabledProps = disabled ? { disabled: true, "aria-disabled": true } : {};
+const Button: FC<PropsWithChildren<IProps>> = (props: PropsWithChildren<IProps>) => {
+  const { onClick, onBlur, moduleSpecificClassList, type, buttonType, fab, disabled } = props;
+  const classList = classNames(
+    'c-btn',
+    buttonType,
+    { 'c-btn--fab': fab ?? false },
+    useBehavior(props),
+    moduleSpecificClassList,
+  );
+  const optionalDisabledProps = disabled ? { disabled: true, "aria-disabled": true } : {};
+  const handleTransitionEndEvents = (ev: React.TransitionEvent<HTMLElement>): boolean => {
+    ev.stopPropagation();
+    ev.preventDefault();
 
-  handleTransitionEndEvents = (ev: React.TransitionEvent<HTMLElement>): boolean => {
-      ev.stopPropagation();
-      ev.preventDefault();
-
-      return false;
-    }
+    return false;
   }
 
   return (
@@ -86,12 +87,12 @@ const Button = <Props extends IBehaviorProps>(props) => {
       {...optionalDisabledProps}
       onClick={onClick}
       onBlur={onBlur}
-      onTransitionEnd={this.handleTransitionEndEvents}
+      onTransitionEnd={handleTransitionEndEvents}
     >
-      {this.props.children}
+      {props.children}
     </button >
   );
-  }
+}
 
 
 export default Button;
