@@ -1,8 +1,7 @@
 export enum EAnimation {
-  Jiggle = "a-jiggle",
+  Jiggle = "a-jiggle--keyframes",
   Ripple = "a-ripple",
   RevealOpacity = "a-reveal-opacity",
-  RevealScale = "a-reveal-scale2d",
   RevealSlide = "a-reveal-slide",
   Tata = "a-tata",
 }
@@ -16,21 +15,27 @@ export enum EColor {
   Warn = "warn",
   Danger = "danger",
   Disabled = "disabled",
-  Light = "neutral-light",
-  Dark = "neutral-dark",
+  NeutralPrimary = "neutral-primary",
+  NeutralSecondary = "neutral-secondary",
+  NeutralAccent = "neutral-accent",
 }
 
 export const componentColor = (componentType: string) => (componentColor: EColor) => `c-${componentType}--${componentColor}`;
 
 export enum EDecoration {
   Discrete = 'u-shadow--discrete',
+  DiscreteBottom = 'u-shadow--discrete-bottom',
   Elevated = 'u-shadow--elevated',
   ElevatedBottom = 'u-shadow--elevated-bottom',
   Sunken = 'u-shadow--sunken',
+  Dreamy = 'u-shadow--dreamy',
+  DreamyExtra = 'u-shadow--dreamy-extra',
+  Smooth = 'u-shadow--smooth',
+  FX1 = 'u-shadow--custom-fx1',
+  FX2 = 'u-shadow--custom-fx2',
 }
 
 export enum EDisabled {
-  Disabled = 'u-ui--disabled u-ux--disabled',
   Events = 'u-ux--disabled',
   Pointer = 'u-ui--disabled',
 }
