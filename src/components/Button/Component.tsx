@@ -1,6 +1,7 @@
 import React, {
   FC,
   PropsWithChildren,
+  useState,
 } from 'react';
 import classNames from 'classnames';
 
@@ -64,13 +65,16 @@ export interface IProps extends IBehaviorProps {
 }
 
 const Button: FC<PropsWithChildren<IProps>> = (props: PropsWithChildren<IProps>) => {
+  const [animationState, setAnimationState] = useState(false);
+
   const { onClick, onBlur, moduleSpecificClassList, type, buttonType, fab, disabled } = props;
   const classList = classNames(
     'c-btn',
     buttonType,
     { 'c-btn--fab': fab ?? false },
-    useBehavior(props),
+    useBehavior('btn', props),
     moduleSpecificClassList,
+    { 'in': animationState },
   );
   const optionalDisabledProps = disabled ? { disabled: true, "aria-disabled": true } : {};
   const handleTransitionEndEvents = (ev: React.TransitionEvent<HTMLElement>): boolean => {
@@ -78,7 +82,13 @@ const Button: FC<PropsWithChildren<IProps>> = (props: PropsWithChildren<IProps>)
     ev.preventDefault();
 
     return false;
-  }
+  };
+  const handleOnBlur = (ev: React.SyntheticEvent<HTMLButtonElement>): boolean => {
+    setAnimationState(false);
+    onBlur?.call(this, ev);
+
+    return true;
+  };
 
   return (
     <button
@@ -86,7 +96,9 @@ const Button: FC<PropsWithChildren<IProps>> = (props: PropsWithChildren<IProps>)
       className={classList}
       {...optionalDisabledProps}
       onClick={onClick}
-      onBlur={onBlur}
+      onMouseDown={() => setAnimationState(true)}
+      onMouseUp={() => setAnimationState(false)}
+      onBlur={handleOnBlur}
       onTransitionEnd={handleTransitionEndEvents}
     >
       {props.children}
