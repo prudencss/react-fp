@@ -19,36 +19,27 @@ export default {
   },
 } as Meta;
 
-const Template: Story<PropsWithChildren<ButtonProps>> = (args) => <Button {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
+const Template: Story<PropsWithChildren<ButtonProps>> = args => <Button {...args} />;
+const args = {
   animation: Behavior.EAnimation.Ripple,
   color: Behavior.EColor.Primary,
   decoration: Behavior.EDecoration.ElevatedBottom,
   size: Behavior.ESize.Medium,
   disabled: undefined,
-  type:  "button",
-  moduleSpecificClassList: [],
+  type:  "button" as 'button',
   buttonType: EButtonType.Basic,
+  moduleSpecificClassList: ['u-mb--medium'],
   fab: false,
   onClick: () => null,
   onBlur: () => null,
-  children: 'Default',
+  children: 'Click me!'
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  ...Default.args,
-  color: Behavior.EColor.Secondary,
-  children: 'Secondary ...',
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  ...Default.args,
-  color: Behavior.EColor.Success,
-  size: Behavior.ESize.Large,
-  children: 'Laaarge!',
+export const Configurable: Story<PropsWithChildren<ButtonProps>> = args => (<>
+   <header><h3>Use Storybook Controls to configure</h3></header>
+  <Button {...args} />
+</>);
+Configurable.args = {
+  ...args,
 };
 
