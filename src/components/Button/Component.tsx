@@ -3,7 +3,7 @@ import React, {
   PropsWithChildren,
   useState,
 } from 'react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 import { IBehaviorProps } from '../../lib/Behaviors';
 import useBehavior from '../../lib/useBehavior';
@@ -68,7 +68,7 @@ const Button: FC<PropsWithChildren<IProps>> = (props: PropsWithChildren<IProps>)
   const [animationState, setAnimationState] = useState(false);
 
   const { onClick, onBlur, moduleSpecificClassList, type, buttonType, fab, disabled } = props;
-  const classList = classNames(
+  const classList = classnames(
     'c-btn',
     buttonType,
     { 'c-btn--fab': fab ?? false },
