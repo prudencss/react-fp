@@ -20,7 +20,6 @@ export enum EColor {
   NeutralAccent = "neutral-accent",
 }
 
-export const componentColor = (componentType: string) => (componentColor: EColor) => `c-${componentType}--${componentColor}`;
 
 export enum EDecoration {
   Discrete = 'u-shadow--discrete',
@@ -41,27 +40,10 @@ export enum EDisabled {
 }
 
 export enum ESize {
-  Tiny = 'tiny',
-  Small = 'small',
-  Medium = 'medium',
-  Large = 'large',
-  Huge = 'huge',
+  XS = 'xs',
+  S = 's',
+  M = 'm',
+  L = 'l',
+  XL = 'xl',
 }
 
-export const componentSize = (componentType: string) =>
-  (componentSize: ESize) => `c-${componentType}--${componentSize}`;
-
-export type TBehavior =
-  | EAnimation
-  | EColor
-  | EDecoration
-  | EDisabled
-  | ESize;
-
-export interface IBehaviorProps {
-  animation?: EAnimation;
-  color?: EColor;
-  decoration?: EDecoration;
-  size?: ESize;
-  disabled?: EDisabled;
-}

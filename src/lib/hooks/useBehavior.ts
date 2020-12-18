@@ -1,11 +1,8 @@
 import { useMemo } from 'react';
 
-import {
-  componentColor,
-  componentSize,
-  TBehavior,
-  IBehaviorProps,
-} from './Behaviors';
+import { componentColor, componentSize } from '../utils/Behaviors';
+import { TBehavior } from '../types/Behaviors';
+import { IBehaviorProps } from '../common/Behaviors';
 
 const useBehavior = <ComponentProps extends IBehaviorProps>(
   componentInfix: string,
