@@ -5,16 +5,9 @@ import React, {
 } from 'react';
 import classnames from 'classnames';
 
-import { IBehaviorProps } from '../../interfaces/Behaviors';
 import useBehavior from '../../hooks/useBehavior';
-
-export enum EButtonType {
-  Basic = 'c-btn-basic',
-  NoBorder = 'c-btn--no-border',
-  Stroked = 'c-btn--stroked',
-  Flat = 'c-btn--flat',
-  Ghost = 'c-btn--ghost',
-};
+import { IBehaviorProps } from '../../interfaces/Behaviors';
+import { EButtonType, EIntrinsicButtonType } from '../../enums/Button';
 
 export interface IProps extends IBehaviorProps {
   /**
@@ -32,7 +25,7 @@ export interface IProps extends IBehaviorProps {
    *   </Button>
    * ```
    */
-  type?: 'button' | 'submit' | 'reset';
+  type?: EIntrinsicButtonType;
 
   /**
    * Add _custom styles_ as string-array class-list
