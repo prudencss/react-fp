@@ -5,8 +5,8 @@ import React, {
 } from 'react';
 import classnames from 'classnames';
 
-import { IBehaviorProps } from '../../lib/Behaviors';
-import useBehavior from '../../lib/useBehavior';
+import { IBehaviorProps } from '../../interfaces/Behaviors';
+import useBehavior from '../../hooks/useBehavior';
 
 export enum EButtonType {
   Basic = 'c-btn-basic',

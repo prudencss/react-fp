@@ -20,7 +20,6 @@ export enum EColor {
   NeutralAccent = "neutral-accent",
 }
 
-
 export enum EDecoration {
   Discrete = 'u-shadow--discrete',
   DiscreteBottom = 'u-shadow--discrete-bottom',
