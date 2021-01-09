@@ -70,7 +70,7 @@ const Button: FC<PropsWithChildren<IProps>> = (props: PropsWithChildren<IProps>)
     { 'in': animationState },
   );
   const optionalDisabledProps = disabled ? { disabled: true, "aria-disabled": true } : {};
-  const handleTransitionEndEvents = (ev: React.TransitionEvent<HTMLElement>): boolean => {
+  const handleOnTransitionEnd = (ev: React.TransitionEvent<HTMLElement>): boolean => {
     ev.stopPropagation();
     ev.preventDefault();
 
@@ -92,7 +92,7 @@ const Button: FC<PropsWithChildren<IProps>> = (props: PropsWithChildren<IProps>)
       onMouseDown={() => setAnimationState(true)}
       onMouseUp={() => setAnimationState(false)}
       onBlur={handleOnBlur}
-      onTransitionEnd={handleTransitionEndEvents}
+      onTransitionEnd={handleOnTransitionEnd}
     >
       {props.children}
     </button >
