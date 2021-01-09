@@ -1,4 +1,4 @@
-export enum FaRegularIcons {
+export enum EFaRegularIcons {
    AddressBook = "x-icon__fa-regular--address-book",
    AddressCard = "x-icon__fa-regular--address-card",
    Angry = "x-icon__fa-regular--angry",
@@ -153,7 +153,7 @@ export enum FaRegularIcons {
    WindowRestore = "x-icon__fa-regular--window-restore",
 }
 
-export enum FaSolidIcons {
+export enum EFaSolidIcons {
   AddressBook = "x-icon__fa-solid--address-book",
   AddressCard = "x-icon__fa-solid--address-card",
   Adjust = "x-icon__fa-solid--adjust",
@@ -1158,7 +1158,7 @@ export enum FaSolidIcons {
   YinYang = "x-icon__fa-solid--yin-yang",
 }
 
-export enum FaBrandsIcons {
+export enum EFaBrandsIcons {
   500px = "x-icon__fa-brands--500px",
   AccessibleIcon = "x-icon__fa-brands--accessible-icon",
   Accusoft = "x-icon__fa-brands--accusoft",
