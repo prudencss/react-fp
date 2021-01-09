@@ -22,9 +22,10 @@ const ListItem: FC<PropsWithChildren<IProps>> = ({
     [selected],
   );
 
+  const iconify = (typeof icon !== undefined && icon !==null);
   const classList = classnames(
     {
-      'x-icon--stateful': (icon !== undefined && selected),
+      'x-icon--stateful': (iconify && selected),
     },
     icon as string,
   );
