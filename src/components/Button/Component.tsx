@@ -57,15 +57,27 @@ export interface IProps extends IBehaviorProps {
   onBlur?: (ev: React.SyntheticEvent<HTMLButtonElement>) => void;
 }
 
-const Button: FC<PropsWithChildren<IProps>> = (props: PropsWithChildren<IProps>) => {
+const Button: FC<PropsWithChildren<IProps>> = ({
+  children,
+  animation,
+  color,
+  decoration,
+  size,
+  disabled,
+  onClick,
+  onBlur,
+  moduleSpecificClassList,
+  type,
+  buttonType,
+  fab,
+}) => {
   const [animationState, setAnimationState] = useState(false);
 
-  const { onClick, onBlur, moduleSpecificClassList, type, buttonType, fab, disabled } = props;
   const classList = classnames(
     'c-btn',
     buttonType,
     { 'c-btn--fab': fab ?? false },
-    useBehavior('btn', props),
+    useBehavior('btn', { animation, color, decoration, size, disabled }),
     moduleSpecificClassList,
     { 'in': animationState },
   );
@@ -94,7 +106,7 @@ const Button: FC<PropsWithChildren<IProps>> = (props: PropsWithChildren<IProps>)
       onBlur={handleOnBlur}
       onTransitionEnd={handleOnTransitionEnd}
     >
-      {props.children}
+      {children}
     </button >
   );
 }

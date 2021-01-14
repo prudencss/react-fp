@@ -1159,7 +1159,7 @@ export enum EFaSolidIcons {
 }
 
 export enum EFaBrandsIcons {
-  500px = "x-icon__fa-brands--500px",
+  "500px" = "x-icon__fa-brands--500px",
   AccessibleIcon = "x-icon__fa-brands--accessible-icon",
   Accusoft = "x-icon__fa-brands--accusoft",
   AcquisitionsIncorporated = "x-icon__fa-brands--acquisitions-incorporated",

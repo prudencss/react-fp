@@ -1,24 +1,27 @@
-import { TSortable } from "../types/Sort";
+import { ESortable } from "../enums/Sort";
+import { TSortable, TSortableData } from "../types/Sort";
 
-export const sortBy = (propAccessor: string | null, builtinType: Date | Number | String) => {
+export const sortBy = (builtinType: TSortable, propAccessor?: string) => {
   let accessor: (p: any) => any;
   const traveller = (prop: any) => {
-    if (!propAccessor) {
+    let deepProp = prop;
+
+    if (typeof propAccessor === 'undefined') {
       return prop;
     }
+    else {
+      let breadCrumbs = propAccessor!.split('.') ?? null;
 
-    let deepProp = prop;
-    let breadCrumbs = propAccessor.split('.');
-
-    for (let p of breadCrumbs) {
-      deepProp = deepProp[p];
+      for (let p of breadCrumbs) {
+        deepProp = deepProp[p];
+      }
     }
 
     return deepProp;
   }
 
   switch (builtinType) {
-    case typeof Date:
+    case ESortable.Date:
       accessor = (p: any) => {
         p = traveller(p);
 
@@ -30,13 +33,13 @@ export const sortBy = (propAccessor: string | null, builtinType: Date | Number |
   }
 
   return {
-    ascending(a: TSortable, b: TSortable) {
-      return builtinType === typeof String ?
+    ascending(a: TSortableData, b: TSortableData) {
+      return builtinType === ESortable.String ?
         accessor(a).localeCompare(accessor(b)) :
         accessor(a) - accessor(b);
     },
-    descending(a: TSortable, b: TSortable) {
-      return builtinType === typeof String ?
+    descending(a: TSortableData, b: TSortableData) {
+      return builtinType === ESortable.String ?
         accessor(b).localeCompare(accessor(a)) :
         accessor(b) - accessor(a);
     }

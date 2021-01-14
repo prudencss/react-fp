@@ -1,4 +1,8 @@
-export type TSortable = typeof Date | typeof Number | typeof String;
+import { ESortOrder, ESortable } from "../enums/Sort";
 
-export type TSortOrder = 'ascending' | 'descending';
+export type TSortable = ESortable;
+
+export type TSortableData = Date | number | string;
+
+export type TSortOrder = ESortOrder;
 

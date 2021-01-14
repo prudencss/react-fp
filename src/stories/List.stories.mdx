@@ -1,0 +1,38 @@
+import { Meta, Canvas, Story } from "@storybook/addon-docs/blocks";
+
+import {
+  ListVariation,
+  ListDataTypeVariations,
+  IconVariations,
+  SelectedIconVariations,
+  SortedVariations,
+  DescendinglySortedVariations,
+} from "./ListVariation.tsx";
+
+<Meta title="Component Variations/List" component={ListVariation} />
+
+# List-Component
+<br/>
+
+### Variations in
+  * Icons
+  * Alternate Icon on Selection
+  * Sorting
+
+<Canvas>
+  <Story name="ListDataTypes">
+    <ListDataTypeVariations {...ListDataTypeVariations.args} />
+  </Story>
+  <Story name="Icons">
+    <IconVariations {...IconVariations.args} />
+  </Story>
+  <Story name="SelectedIcons">
+    <SelectedIconVariations {...SelectedIconVariations.args} />
+  </Story>
+  <Story name="Sorted">
+    <SortedVariations {...SortedVariations.args} />
+  </Story>
+  <Story name="DescendinglySorted">
+    <DescendinglySortedVariations {...DescendinglySortedVariations.args} />
+  </Story>
+</Canvas>

@@ -2,31 +2,31 @@ import React, { PropsWithChildren } from 'react';
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/react/types-6-0';
 
-import Button, { IProps as ButtonProps, EButtonType } from '../components/Button';
-import * as Behavior from '../lib/Behaviors';
+import Button, { IProps as ButtonProps } from '../components/Button';
+import { EButtonType, EIntrinsicButtonType } from '../enums/Button';
+import * as EBehavior from '../enums/Behaviors';
 
 export default {
   title: 'Button',
   component: Button,
   argTypes: {
-    animation: { control: { type: 'select', options: Behavior.EAnimation }},
-    color: { control : { type: 'select', options: Behavior.EColor }},
-    decoration: { control : { type: 'select', options: Behavior.EDecoration}},
-    size: { control: { type: 'select', options: Behavior.ESize }},
-    disabled: { control: { type: 'select', options: Behavior.EDisabled }},
+    animation: { control: { type: 'select', options: EBehavior.EAnimation }},
+    color: { control : { type: 'select', options: EBehavior.EColor }},
+    decoration: { control : { type: 'select', options: EBehavior.EDecoration}},
+    size: { control: { type: 'select', options: EBehavior.ESize }},
+    disabled: { control: { type: 'select', options: EBehavior.EDisabled }},
     type: { control: { type: 'select', options: ['button', 'submit', 'reset']}},
     buttonType: { control: { type: 'select', options: EButtonType }},
   },
 } as Meta;
 
-const Template: Story<PropsWithChildren<ButtonProps>> = args => <Button {...args} />;
 const args = {
-  animation: Behavior.EAnimation.Ripple,
-  color: Behavior.EColor.Primary,
-  decoration: Behavior.EDecoration.ElevatedBottom,
-  size: Behavior.ESize.Medium,
+  animation: EBehavior.EAnimation.Ripple,
+  color: EBehavior.EColor.Primary,
+  decoration: EBehavior.EDecoration.ElevatedBottom,
+  size: EBehavior.ESize.M,
   disabled: undefined,
-  type:  "button" as 'button',
+  type: EIntrinsicButtonType.Button,
   buttonType: EButtonType.Basic,
   moduleSpecificClassList: ['u-mb--medium'],
   fab: false,
