@@ -35,7 +35,7 @@ export class ListVariation extends React.Component<{ listPropsList: PropsWithChi
 
     return (<section>
       {listPropsList.map((lp: ListProps, id) => (
-        <article key={id} className="u-mb--large">
+        <article key={id} className="u-mb--l">
           <header><h3>{lp.label}</h3></header>
           <List {...lp} />
           <hr/>

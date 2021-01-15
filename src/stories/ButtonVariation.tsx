@@ -16,7 +16,7 @@ export class ButtonVariation extends React.Component<{ buttonPropsList: PropsWit
 
     return (<section>
       {buttonPropsList.map((bp: ButtonProps, id) => (
-        <article key={id} className="u-mb--large">
+        <article key={id} className="u-mb--l">
           <header><h3>{bp.label}</h3></header>
           <Button {...bp} />
           <hr/>
