@@ -6,6 +6,7 @@
       "dom.iterable",
       "esnext"
     ],
+    "outDir": "lib",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -21,7 +22,7 @@
     "noFallthroughCasesInSwitch": true,
     "declaration": true,
     "declarationMap": true,
-    "sourceMap": true,
+    "sourceMap": true
   },
   "include": [
     "src"
@@ -31,5 +32,6 @@
     ".storybook",
     "src/stories",
     "src/setupTests.ts"
-  ]
+  ],
+  "files": ["src/index.ts"]
 }
