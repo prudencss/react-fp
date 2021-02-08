@@ -1,7 +1,2 @@
-import * as Button from './components/Button';
+export * as Nav from './components/Nav';
 
-export { Button };
-
-export default {
-  Button,
-}

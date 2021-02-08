@@ -1,2 +1,2 @@
 export type { IProps } from './Component';
-export { default, EButtonType } from './Component';
+export { Component } from './Component';

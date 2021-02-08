@@ -4,7 +4,7 @@ import React, {
 } from "react";
 import classnames from "classnames";
 
-import { ESize } from '../../lib/enums/Behaviors';
+import { ESize } from '../../enums/Behaviors';
 
 export interface IMaterializedRootProps {
   size: ESize,
