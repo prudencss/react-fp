@@ -4,12 +4,6 @@ import {
   EDecoration,
   EDisabled,
   ESize,
-} from '../enums/Behaviors';
+} from "../enums/Behaviors";
 
-export type TBehavior =
-  | EAnimation
-  | EColor
-  | EDecoration
-  | EDisabled
-  | ESize;
-
+export type TBehavior = EAnimation | EColor | EDecoration | EDisabled | ESize;
