@@ -74,8 +74,8 @@ export const Container: FC<PropsWithChildren<ILayoutContainerProps>> = ({
     "o-layout",
     decoration,
     moduleSpecificClassList,
-    hAlign && `o-layout--${h_align}`,
-    vAlign && `o-layout--${v_align}`,
+    hAlign && `o-layout--${hAlign}`,
+    vAlign && `o-layout--${vAlign}`,
     reverse && "o-layout--reverse"
   );
 
