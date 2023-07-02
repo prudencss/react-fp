@@ -4,6 +4,7 @@ import classnames from "classnames";
 import useBehavior from "../../hooks/useBehavior";
 import { IBehaviorProps } from "../../interfaces/Behaviors";
 import { EButtonType, EIntrinsicButtonType } from "../../enums/Button";
+import { TFaIcons as TIcon } from "../../types/Icons";
 
 export interface IButtonProps extends IBehaviorProps {
   /**
@@ -51,9 +52,10 @@ export interface IButtonProps extends IBehaviorProps {
   fab?: boolean;
   onClick: (ev: React.SyntheticEvent<HTMLButtonElement>) => void;
   onBlur?: (ev: React.SyntheticEvent<HTMLButtonElement>) => void;
+  icon?: TIcon & string;
 }
 
-export const Button: FC<PropsWithChildren<IButtonProps>> = ({
+export const Component: FC<PropsWithChildren<IButtonProps>> = ({
   children,
   animation,
   color,
@@ -66,6 +68,7 @@ export const Button: FC<PropsWithChildren<IButtonProps>> = ({
   type,
   buttonType,
   fab,
+  icon,
 }) => {
   const [animationState, setAnimationState] = useState(false);
 
@@ -75,7 +78,10 @@ export const Button: FC<PropsWithChildren<IButtonProps>> = ({
     { "c-btn--fab": fab ?? false },
     useBehavior("btn", { animation, color, decoration, size, disabled }),
     moduleSpecificClassList,
-    { in: animationState }
+    {
+      in: animationState,
+      [`${icon}`]: typeof icon !== undefined && icon !== null,
+    }
   );
   const optionalDisabledProps = disabled
     ? { disabled: true, "aria-disabled": true }
@@ -112,5 +118,3 @@ export const Button: FC<PropsWithChildren<IButtonProps>> = ({
     </button>
   );
 };
-
-export default Button;
