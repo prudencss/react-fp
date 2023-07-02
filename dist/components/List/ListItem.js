@@ -26,9 +26,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Component = void 0;
 const react_1 = __importStar(require("react"));
 const classnames_1 = __importDefault(require("classnames"));
-const ListItem = ({ children, icon, }) => {
+const Component = ({ children, icon, }) => {
     const [selected, setSelected] = (0, react_1.useState)(false);
     const toggleSelected = (0, react_1.useCallback)(() => setSelected(!selected), [selected]);
     const iconify = typeof icon !== "undefined" && icon !== null;
@@ -38,5 +39,5 @@ const ListItem = ({ children, icon, }) => {
     });
     return (react_1.default.createElement("li", { className: classList, onClick: toggleSelected }, children));
 };
-exports.default = ListItem;
+exports.Component = Component;
 //# sourceMappingURL=ListItem.js.map

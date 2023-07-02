@@ -34,6 +34,5 @@ export interface ILabelProps extends IBehaviorProps {
     fab?: boolean;
     onBlur?: (ev: React.SyntheticEvent<HTMLElement>) => void;
 }
-export declare const Label: FC<PropsWithChildren<ILabelProps>>;
-export default Label;
+export declare const Component: FC<PropsWithChildren<ILabelProps>>;
 //# sourceMappingURL=Label.d.ts.map

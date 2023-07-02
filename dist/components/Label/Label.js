@@ -26,7 +26,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Label = exports.ELabelType = void 0;
+exports.Component = exports.ELabelType = void 0;
 const react_1 = __importStar(require("react"));
 const classnames_1 = __importDefault(require("classnames"));
 const useBehavior_1 = __importDefault(require("../../hooks/useBehavior"));
@@ -38,7 +38,7 @@ var ELabelType;
     ELabelType["Flat"] = "c-label--flat";
     ELabelType["Ghost"] = "c-label--ghost";
 })(ELabelType = exports.ELabelType || (exports.ELabelType = {}));
-const Label = ({ children, moduleSpecificClassList, labelType, fab, animation, color, decoration, size, disabled, onBlur, }) => {
+const Component = ({ children, moduleSpecificClassList, labelType, fab, animation, color, decoration, size, disabled, onBlur, }) => {
     const [animationState, setAnimationState] = (0, react_1.useState)(false);
     const classList = (0, classnames_1.default)("c-label", labelType, { "c-label--fab": fab !== null && fab !== void 0 ? fab : false }, (0, useBehavior_1.default)("label", { animation, color, decoration, size, disabled }), moduleSpecificClassList, { in: animationState });
     const handleTransitionEndEvents = (ev) => {
@@ -48,6 +48,5 @@ const Label = ({ children, moduleSpecificClassList, labelType, fab, animation, c
     };
     return (react_1.default.createElement("label", { className: classList, onMouseDown: () => setAnimationState(true), onMouseUp: () => setAnimationState(false), onTransitionEnd: handleTransitionEndEvents, onBlur: onBlur }, children));
 };
-exports.Label = Label;
-exports.default = exports.Label;
+exports.Component = Component;
 //# sourceMappingURL=Label.js.map

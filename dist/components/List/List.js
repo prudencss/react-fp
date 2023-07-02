@@ -26,13 +26,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.List = void 0;
+exports.Component = void 0;
 const react_1 = __importStar(require("react"));
 const classnames_1 = __importDefault(require("classnames"));
-const ListItem_1 = __importDefault(require("./ListItem"));
+const ListItem_1 = require("./ListItem");
 const Sort_1 = require("../../utils/Sort");
 const Sort_2 = require("../../enums/Sort");
-const List = ({ icon, iconSelected, listData, sortBy, sortOrder, moduleSpecificClassList, }) => {
+const Component = ({ icon, iconSelected, listData, sortBy, sortOrder, moduleSpecificClassList, }) => {
     const [sortedData, setSortedData] = (0, react_1.useState)([...listData]);
     (0, react_1.useMemo)(() => {
         if (typeof (sortBy === null || sortBy === void 0 ? void 0 : sortBy.type) !== "undefined" && sortBy.type !== null) {
@@ -46,14 +46,13 @@ const List = ({ icon, iconSelected, listData, sortBy, sortOrder, moduleSpecificC
         [icon]: iconify,
     });
     if (typeof (sortBy === null || sortBy === void 0 ? void 0 : sortBy.type) !== "undefined" && sortBy.type !== null) {
-        return (react_1.default.createElement("ol", { className: classList }, sortedData.map((item, i) => (react_1.default.createElement(ListItem_1.default, { key: i, icon: iconSelected }, item instanceof Date
+        return (react_1.default.createElement("ol", { className: classList }, sortedData.map((item, i) => (react_1.default.createElement(ListItem_1.Component, { key: i, icon: iconSelected }, item instanceof Date
             ? item.toLocaleString()
             : item.toString())))));
     }
-    return (react_1.default.createElement("ul", { className: classList }, listData.map((item, i) => (react_1.default.createElement(ListItem_1.default, { key: i, icon: iconSelected }, item instanceof Date
+    return (react_1.default.createElement("ul", { className: classList }, listData.map((item, i) => (react_1.default.createElement(ListItem_1.Component, { key: i, icon: iconSelected }, item instanceof Date
         ? item.toLocaleString()
         : item.toString())))));
 };
-exports.List = List;
-exports.default = exports.List;
+exports.Component = Component;
 //# sourceMappingURL=List.js.map

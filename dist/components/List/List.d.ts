@@ -12,6 +12,5 @@ export interface IListProps {
     listData: TSortableData[];
     moduleSpecificClassList?: string[];
 }
-export declare const List: FC<IListProps>;
-export default List;
+export declare const Component: FC<IListProps>;
 //# sourceMappingURL=List.d.ts.map

@@ -4,6 +4,5 @@ export interface INavBarProps {
     brand?: string | ReactNode;
     extra?: ReactNode[] | ReactNode;
 }
-export declare const NavBar: FC<PropsWithChildren<INavBarProps>>;
-export default NavBar;
+export declare const Component: FC<PropsWithChildren<INavBarProps>>;
 //# sourceMappingURL=NavBar.d.ts.map

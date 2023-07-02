@@ -1,7 +1,7 @@
 import React, { FC, useState, useMemo } from "react";
 import classnames from "classnames";
 
-import ListItem from "./ListItem";
+import { Component as ListItem } from "./ListItem";
 import { sortBy as by } from "../../utils/Sort";
 import { TFaIcons as TIcon } from "../../types/Icons";
 import { TSortOrder, TSortable, TSortableData } from "../../types/Sort";

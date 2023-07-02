@@ -1,6 +1,7 @@
 import React, { FC, PropsWithChildren } from "react";
 import { IBehaviorProps } from "../../interfaces/Behaviors";
 import { EButtonType, EIntrinsicButtonType } from "../../enums/Button";
+import { TFaIcons as TIcon } from "../../types/Icons";
 export interface IButtonProps extends IBehaviorProps {
     /**
      * Define _button behaviour_
@@ -44,7 +45,7 @@ export interface IButtonProps extends IBehaviorProps {
     fab?: boolean;
     onClick: (ev: React.SyntheticEvent<HTMLButtonElement>) => void;
     onBlur?: (ev: React.SyntheticEvent<HTMLButtonElement>) => void;
+    icon?: TIcon & string;
 }
-export declare const Button: FC<PropsWithChildren<IButtonProps>>;
-export default Button;
+export declare const Component: FC<PropsWithChildren<IButtonProps>>;
 //# sourceMappingURL=Button.d.ts.map

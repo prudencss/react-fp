@@ -26,13 +26,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Button = void 0;
+exports.Component = void 0;
 const react_1 = __importStar(require("react"));
 const classnames_1 = __importDefault(require("classnames"));
 const useBehavior_1 = __importDefault(require("../../hooks/useBehavior"));
-const Button = ({ children, animation, color, decoration, size, disabled, onClick, onBlur, moduleSpecificClassList, type, buttonType, fab, }) => {
+const Component = ({ children, animation, color, decoration, size, disabled, onClick, onBlur, moduleSpecificClassList, type, buttonType, fab, icon, }) => {
     const [animationState, setAnimationState] = (0, react_1.useState)(false);
-    const classList = (0, classnames_1.default)("c-btn", buttonType, { "c-btn--fab": fab !== null && fab !== void 0 ? fab : false }, (0, useBehavior_1.default)("btn", { animation, color, decoration, size, disabled }), moduleSpecificClassList, { in: animationState });
+    const classList = (0, classnames_1.default)("c-btn", buttonType, { "c-btn--fab": fab !== null && fab !== void 0 ? fab : false }, (0, useBehavior_1.default)("btn", { animation, color, decoration, size, disabled }), moduleSpecificClassList, {
+        in: animationState,
+        [`${icon}`]: typeof icon !== undefined && icon !== null,
+    });
     const optionalDisabledProps = disabled
         ? { disabled: true, "aria-disabled": true }
         : {};
@@ -48,6 +51,5 @@ const Button = ({ children, animation, color, decoration, size, disabled, onClic
     };
     return (react_1.default.createElement("button", { type: type !== null && type !== void 0 ? type : "button", className: classList, ...optionalDisabledProps, onClick: onClick, onMouseDown: () => setAnimationState(true), onMouseUp: () => setAnimationState(false), onBlur: handleOnBlur, onTransitionEnd: handleOnTransitionEnd }, children));
 };
-exports.Button = Button;
-exports.default = exports.Button;
+exports.Component = Component;
 //# sourceMappingURL=Button.js.map
