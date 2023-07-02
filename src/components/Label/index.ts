@@ -1,2 +1,2 @@
-export type { IProps } from './Component';
-export { default, ELabelType } from './Component';
+export type { ILabelProps } from "./Label";
+export { default, ELabelType } from "./Label";

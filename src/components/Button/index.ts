@@ -1,2 +1,2 @@
-export type { IProps } from './Component';
-export { default } from './Component';
+export type { IButtonProps } from "./Button";
+export { default, Button } from "./Button";

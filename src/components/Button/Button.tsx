@@ -1,15 +1,11 @@
-import React, {
-  FC,
-  PropsWithChildren,
-  useState,
-} from 'react';
-import classnames from 'classnames';
+import React, { FC, PropsWithChildren, useState } from "react";
+import classnames from "classnames";
 
-import useBehavior from '../../hooks/useBehavior';
-import { IBehaviorProps } from '../../interfaces/Behaviors';
-import { EButtonType, EIntrinsicButtonType } from '../../enums/Button';
+import useBehavior from "../../hooks/useBehavior";
+import { IBehaviorProps } from "../../interfaces/Behaviors";
+import { EButtonType, EIntrinsicButtonType } from "../../enums/Button";
 
-export interface IProps extends IBehaviorProps {
+export interface IButtonProps extends IBehaviorProps {
   /**
    * Define _button behaviour_
    * *default:* 'button'
@@ -57,7 +53,7 @@ export interface IProps extends IBehaviorProps {
   onBlur?: (ev: React.SyntheticEvent<HTMLButtonElement>) => void;
 }
 
-const Button: FC<PropsWithChildren<IProps>> = ({
+export const Button: FC<PropsWithChildren<IButtonProps>> = ({
   children,
   animation,
   color,
@@ -74,21 +70,27 @@ const Button: FC<PropsWithChildren<IProps>> = ({
   const [animationState, setAnimationState] = useState(false);
 
   const classList = classnames(
-    'c-btn',
+    "c-btn",
     buttonType,
-    { 'c-btn--fab': fab ?? false },
-    useBehavior('btn', { animation, color, decoration, size, disabled }),
+    { "c-btn--fab": fab ?? false },
+    useBehavior("btn", { animation, color, decoration, size, disabled }),
     moduleSpecificClassList,
-    { 'in': animationState },
+    { in: animationState }
   );
-  const optionalDisabledProps = disabled ? { disabled: true, "aria-disabled": true } : {};
-  const handleOnTransitionEnd = (ev: React.TransitionEvent<HTMLElement>): boolean => {
+  const optionalDisabledProps = disabled
+    ? { disabled: true, "aria-disabled": true }
+    : {};
+  const handleOnTransitionEnd = (
+    ev: React.TransitionEvent<HTMLElement>
+  ): boolean => {
     ev.stopPropagation();
     ev.preventDefault();
 
     return false;
   };
-  const handleOnBlur = (ev: React.SyntheticEvent<HTMLButtonElement>): boolean => {
+  const handleOnBlur = (
+    ev: React.SyntheticEvent<HTMLButtonElement>
+  ): boolean => {
     setAnimationState(false);
     onBlur?.call(this, ev);
 
@@ -97,7 +99,7 @@ const Button: FC<PropsWithChildren<IProps>> = ({
 
   return (
     <button
-      type={type ?? 'button'}
+      type={type ?? "button"}
       className={classList}
       {...optionalDisabledProps}
       onClick={onClick}
@@ -107,10 +109,8 @@ const Button: FC<PropsWithChildren<IProps>> = ({
       onTransitionEnd={handleOnTransitionEnd}
     >
       {children}
-    </button >
+    </button>
   );
-}
-
+};
 
 export default Button;
-

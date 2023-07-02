@@ -8,4 +8,3 @@ export enum ESortable {
   Number = "number",
   String = "string",
 }
-

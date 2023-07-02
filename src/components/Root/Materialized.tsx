@@ -1,34 +1,24 @@
-import React, {
-  FC,
-  PropsWithChildren,
-} from "react";
+import React, { FC, PropsWithChildren } from "react";
 import classnames from "classnames";
+import { ESize } from "../../enums/Behaviors";
 
-import { ESize } from '../../enums/Behaviors';
+export { ESize };
 
 export interface IMaterializedRootProps {
-  size: ESize,
-  moduleSpecificClassList: string[],
+  size?: ESize;
+  moduleSpecificClassList?: string[];
 }
 
-const MaterializedRoot: FC<PropsWithChildren<IMaterializedRootProps>> = ({
-  children,
-  size,
-  moduleSpecificClassList,
-}) => {
+export const MaterializedRoot: FC<
+  PropsWithChildren<IMaterializedRootProps>
+> = ({ children, size, moduleSpecificClassList }) => {
   const classList = classnames(
     "m-body",
-    size && `m-body__size--${size}`,
     moduleSpecificClassList,
+    size && `m-body__size--${size ?? "m"}`
   );
 
-  return (
-    <div
-      className={classList}
-    >
-      {children}
-    </div>
-  );
-}
+  return <div className={classList}>{children}</div>;
+};
 
 export default MaterializedRoot;

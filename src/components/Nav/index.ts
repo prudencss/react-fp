@@ -1,2 +1,2 @@
-export type { IProps } from './Component';
-export { Component } from './Component';
+export type { INavBarProps } from "./NavBar";
+export { default, NavBar } from "./NavBar";

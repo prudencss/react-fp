@@ -1,3 +1,3 @@
-import { EFaSolidIcons, EFaBrandsIcons, EFaRegularIcons } from '../enums/Icons';
+import { EFaSolidIcons, EFaBrandsIcons, EFaRegularIcons } from "../enums/Icons";
 
 export type TFaIcons = EFaRegularIcons | EFaBrandsIcons | EFaSolidIcons;

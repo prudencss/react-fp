@@ -1,3 +1,3 @@
 export enum Transition {
-  Trigger = 'in',
+  Trigger = "in",
 }

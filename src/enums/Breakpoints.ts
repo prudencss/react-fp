@@ -1,16 +1,16 @@
 export enum EDeviceType {
-  Mobile = 'mobile',
-  Tablet  = 'tablet',
-  Desktop = 'desktop',
+  Mobile = "mobile",
+  Tablet = "tablet",
+  Desktop = "desktop",
 }
 
 export enum EOrientation {
-  Portrait = 'portrait',
-  Landscape = 'landscape',
+  Portrait = "portrait",
+  Landscape = "landscape",
 }
 
 export enum EDeviceSize {
-  Small = 'small',
-  Medium = 'medium',
-  Large = 'large',
+  Small = "small",
+  Medium = "medium",
+  Large = "large",
 }

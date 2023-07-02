@@ -4,7 +4,7 @@ import {
   EDecoration,
   EDisabled,
   ESize,
-} from '../enums/Behaviors';
+} from "../enums/Behaviors";
 
 export interface IBehaviorProps {
   animation?: EAnimation;

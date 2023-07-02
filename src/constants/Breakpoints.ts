@@ -1,8 +1,4 @@
-import {
-  EOrientation,
-  EDeviceType,
-  EDeviceSize
-} from '../enums/Breakpoints';
+import { EOrientation, EDeviceType, EDeviceSize } from "../enums/Breakpoints";
 
 export default {
   [EOrientation.Portrait]: {
@@ -37,7 +33,6 @@ export default {
       [EDeviceSize.Small]: 1440,
       [EDeviceSize.Medium]: 1600,
       [EDeviceSize.Large]: 1920,
-    }
-  }
+    },
+  },
 };
-

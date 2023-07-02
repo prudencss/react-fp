@@ -6,19 +6,18 @@ export const sortBy = (builtinType: TSortable, propAccessor?: string) => {
   const traveller = (prop: any) => {
     let deepProp = prop;
 
-    if (typeof propAccessor === 'undefined') {
+    if (typeof propAccessor === "undefined") {
       return prop;
-    }
-    else {
-      let breadCrumbs = propAccessor!.split('.') ?? null;
+    } else {
+      const breadCrumbs = propAccessor!.split(".") ?? [];
 
-      for (let p of breadCrumbs) {
+      for (const p of breadCrumbs) {
         deepProp = deepProp[p];
       }
     }
 
     return deepProp;
-  }
+  };
 
   switch (builtinType) {
     case ESortable.Date:
@@ -26,7 +25,7 @@ export const sortBy = (builtinType: TSortable, propAccessor?: string) => {
         p = traveller(p);
 
         return p instanceof Date ? p.getTime() : new Date(p).getTime();
-      }
+      };
       break;
     default:
       accessor = (p: any) => traveller(p);
@@ -34,14 +33,14 @@ export const sortBy = (builtinType: TSortable, propAccessor?: string) => {
 
   return {
     ascending(a: TSortableData, b: TSortableData) {
-      return builtinType === ESortable.String ?
-        accessor(a).localeCompare(accessor(b)) :
-        accessor(a) - accessor(b);
+      return builtinType === ESortable.String
+        ? accessor(a).localeCompare(accessor(b))
+        : accessor(a) - accessor(b);
     },
     descending(a: TSortableData, b: TSortableData) {
-      return builtinType === ESortable.String ?
-        accessor(b).localeCompare(accessor(a)) :
-        accessor(b) - accessor(a);
-    }
-  }
+      return builtinType === ESortable.String
+        ? accessor(b).localeCompare(accessor(a))
+        : accessor(b) - accessor(a);
+    },
+  };
 };
