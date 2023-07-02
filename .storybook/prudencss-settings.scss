@@ -131,9 +131,9 @@ $f-color__digital-blue: #0070d2;
  * EASINGS
  * ------------------------------------------------------------------------- */
 
-$f-easings--user: (
+//$f-easings--user: (
   //  "myEasing": cubic-bezier(0, 0, 0, 0)
-);
+//);
 
 /* -------------------------------------------------------------------------
  * DURATIONS
@@ -398,3 +398,5 @@ $o-grid__mod-alignments-content-cross--enabled: true;
 $o-grid__mod-alignments-item-inline--enabled: true;
 $o-grid__mod-alignments-item-cross--enabled: true;
 
+@use "@prudencss/icons-svg";
+@use "@prudencss/scss";

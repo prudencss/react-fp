@@ -1,5 +1,9 @@
-import { Meta, Canvas, Story } from "@storybook/addon-docs/blocks";
+---
+name: Button
+route: /button
+---
 
+import { Playground, Props } from "docz";
 import {
   ButtonVariation,
   SizeVariations,
@@ -10,9 +14,8 @@ import {
   TypeVariations
 } from "./ButtonVariation";
 
-<Meta title="Component Variations/Button" component={ButtonVariation} />
-
 # Button-Component
+<Props of="ButtonVariation" />
 <br/>
 
 ### Variations in
@@ -27,23 +30,11 @@ import {
 
 Note that there is a pure-scss version of this component (as I guess there'll be in most cases) in the [scss-version of prudencss](https://github.com/prudencss/scss/blob/master/src/components/_components__button.scss).
 
-<Canvas>
-  <Story name="sizes">
+<Playground>
     <SizeVariations {...SizeVariations.args} />
-  </Story>
-  <Story name="color-themes">
     <ColorVariations {...ColorVariations.args} />
-  </Story>
-  <Story name="decoration-themes">
     <DecorationVariations {...DecorationVariations.args} />
-  </Story>
-  <Story name="click-animations">
     <AnimationVariations {...AnimationVariations.args} />
-  </Story>
-  <Story name="disabled-UI/UX">
     <DisabledVariations {...DisabledVariations.args} />
-  </Story>
-  <Story name="styled themes">
     <TypeVariations {...TypeVariations.args} />
-  </Story>
-</Canvas>
+</Playground>

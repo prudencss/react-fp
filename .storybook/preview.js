@@ -4,4 +4,4 @@ import "@prudencss/icons-svg";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
-}
+};
