@@ -19,7 +19,7 @@ export interface IListProps {
   moduleSpecificClassList?: string[];
 }
 
-export const List: FC<IListProps> = ({
+export const Component: FC<IListProps> = ({
   icon,
   iconSelected,
   listData,
@@ -72,5 +72,3 @@ export const List: FC<IListProps> = ({
     </ul>
   );
 };
-
-export default List;

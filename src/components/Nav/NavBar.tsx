@@ -7,7 +7,7 @@ export interface INavBarProps {
   extra?: ReactNode[] | ReactNode;
 }
 
-export const NavBar: FC<PropsWithChildren<INavBarProps>> = ({
+export const Component: FC<PropsWithChildren<INavBarProps>> = ({
   children,
   moduleSpecificClassList,
   brand,
@@ -33,5 +33,3 @@ export const NavBar: FC<PropsWithChildren<INavBarProps>> = ({
     </nav>
   );
 };
-
-export default NavBar;

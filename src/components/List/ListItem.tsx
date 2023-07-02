@@ -7,7 +7,7 @@ export interface IListItemProps {
   icon?: TIcon & string;
 }
 
-const ListItem: FC<PropsWithChildren<IListItemProps>> = ({
+export const Component: FC<PropsWithChildren<IListItemProps>> = ({
   children,
   icon,
 }) => {
@@ -26,5 +26,3 @@ const ListItem: FC<PropsWithChildren<IListItemProps>> = ({
     </li>
   );
 };
-
-export default ListItem;

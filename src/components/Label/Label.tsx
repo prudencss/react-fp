@@ -42,7 +42,7 @@ export interface ILabelProps extends IBehaviorProps {
   onBlur?: (ev: React.SyntheticEvent<HTMLElement>) => void;
 }
 
-export const Label: FC<PropsWithChildren<ILabelProps>> = ({
+export const Component: FC<PropsWithChildren<ILabelProps>> = ({
   children,
   moduleSpecificClassList,
   labelType,
@@ -84,5 +84,3 @@ export const Label: FC<PropsWithChildren<ILabelProps>> = ({
     </label>
   );
 };
-
-export default Label;

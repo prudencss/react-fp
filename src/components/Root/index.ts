@@ -1,8 +1,4 @@
-import {
-  ESize,
-  MaterializedRoot,
-  IMaterializedRootProps,
-} from "./Materialized";
+import { MaterializedRoot, IMaterializedRootProps } from "./Materialized";
 import { RouterRoot, IRouterRootProps, IRouteProps } from "./Router";
 
 export { MaterializedRoot, RouterRoot };
